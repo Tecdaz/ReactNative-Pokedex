@@ -54,7 +54,7 @@ function renderPokeBall() {
     <Image
       // eslint-disable-next-line no-undef
       source={require("../../assets/pokeball.png")}
-      style={{ width: 75, height: 75, top: -15 }}
+      style={{ width: 72, height: 72, top: -16 }}
     />
   );
 }
