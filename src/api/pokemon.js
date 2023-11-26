@@ -1,13 +1,26 @@
 import { API_HOST } from "../utils/constants";
 
 export async function getPokemonsApi() {
-  // eslint-disable-next-line no-useless-catch
   try {
     const url = `${API_HOST}/pokemon?limit=20&offset=0`;
     const response = await fetch(url);
     const result = await response.json();
     return result;
   } catch (error) {
-    throw error;
+    handleError(error);
   }
 }
+
+export async function getPokemonDetailsByUrlApi(url) {
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+const handleError = (error) => {
+  console.log(error);
+};
