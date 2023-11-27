@@ -7,7 +7,7 @@ export async function getPokemonsApi() {
     const result = await response.json();
     return result;
   } catch (error) {
-    handleError(error);
+    console.log(error);
   }
 }
 
@@ -17,10 +17,6 @@ export async function getPokemonDetailsByUrlApi(url) {
     const result = await response.json();
     return result;
   } catch (error) {
-    handleError(error);
+    console.log(error);
   }
 }
-
-const handleError = (error) => {
-  console.log(error);
-};

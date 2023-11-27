@@ -1,6 +1,7 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import React, { useState, useEffect } from "react";
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
+import PokemonList from "../components/PokemonList";
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -22,18 +23,18 @@ export default function Pokedex() {
           name: pokemonDetail.name,
           type: pokemonDetail.types[0].type.name,
           order: pokemonDetail.order,
-          imagen: pokemonDetail.sprites.other["official-artwork"].front_default,
+          image: pokemonDetail.sprites.other["official-artwork"].front_default,
         });
       }
-      console.log(pokemonsArray);
-      setPokemons([...pokemons, ...pokemonsArray]);
+      setPokemons([...pokemonsArray]);
+      console.log(pokemons);
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <View>
-      <Text>Pokedex</Text>
-    </View>
+    <SafeAreaView>
+      <PokemonList pokemons={pokemons} />
+    </SafeAreaView>
   );
 }
