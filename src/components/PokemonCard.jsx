@@ -1,9 +1,11 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import getColorByPokemonType from "../utils/getColorByPokemonType";
+import { useNavigation } from "@react-navigation/native";
 
 export default function PokemonCard(props) {
   const { pokemon } = props;
+  const navigation = useNavigation();
 
   const pokemonColor = getColorByPokemonType(pokemon.type);
 
@@ -13,7 +15,8 @@ export default function PokemonCard(props) {
   };
 
   const goToPokemon = () => {
-    console.log("goToPokemon");
+    console.log(pokemon.id);
+    navigation.navigate("PokemonScreen", { id: pokemon.id });
   };
 
   return (
