@@ -25,7 +25,7 @@ export default function Header(props) {
 const styles = StyleSheet.create({
   bg: {
     width: "100%",
-    height: 350,
+    height: 300,
     position: "absolute",
     borderBottomEndRadius: 300,
     borderBottomStartRadius: 300,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "start",
     alignItems: "center",
     top: 40,
-    height: 400,
+    height: 300,
   },
   header: {
     flexDirection: "row",
